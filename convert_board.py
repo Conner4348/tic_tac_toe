@@ -42,7 +42,22 @@ def convert_board(game_state, config):
 
 
   if config == 2:
-    pass
+    
+    current_sub = []
+    current_index = 0
+    current_dif = 4
+    while len(board_config) < 2:
+      current_sub.append(game_state[current_index])
+      if len(current_sub) == 3:
+        board_config.append(current_sub)
+        current_sub = []
+        current_dif = -2
+      current_index = current_index + current_dif
+    print(board_config)
+    return board_config
+  
+
+
 
 
 
@@ -54,3 +69,4 @@ test_one = {0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8}
 
 fn_test_one = convert_board(test_one, 0)
 fn_test_two = convert_board(test_one, 1)
+fn_test_three = convert_board(test_one, 2)
