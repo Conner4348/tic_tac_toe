@@ -24,7 +24,7 @@
 # will return True.
 # If the nested loops are all terminated, then the function should return False.
 
-def check_winner(game_state, player): # player is the letter that the player is using (X or O)
+def check_winner_fn(game_state, player): # player is the letter that the player is using (X or O)
 
     winner = None
     for sublist in game_state:
@@ -34,11 +34,11 @@ def check_winner(game_state, player): # player is the letter that the player is 
         winner = True
         for val in sublist:
             if val != player:
-                print(f'{val} does not match {player}.')
+                #print(f'{val} does not match {player}.')
                 winner = False
                 continue
         
-    print(f'{player} has not won the game...')
+    #print(f'{player} has not won the game...')
     return False
 
 # =======
@@ -49,7 +49,7 @@ test_one = [['X', 'X', 'X'], [3, 'O', 'O'], [6, 'X', 'O']]
 test_two = [['X', 'X', 2], ['X', 'O', 'O'], [6, 'X', 'O']]
 test_three = [['O', 'O', 2], ['X', 'X', 'X'], [6, 'X', 'O']]
 
-print('The following two tests should return True, False, True:')
-fn_one = check_winner(test_one, 'X')
-fn_two = check_winner(test_two, 'X')
-fn_three = check_winner(test_three, 'X')
+#print('The following two tests should return True, False, True:')
+#fn_one = check_winner(test_one, 'X')
+#fn_two = check_winner(test_two, 'X')
+#fn_three = check_winner(test_three, 'X')
