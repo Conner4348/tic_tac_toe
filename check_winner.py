@@ -34,16 +34,17 @@ def check_winner_fn(game_state, player): # player is the letter that the player 
         #    print(f'{player} has won the game!')
         #    return True
         winner = True
+
+        # SOMETHING IS WRONG WITH THIS CODE, I THINK.
+        # YES SOMETHING IS WRONG WITH CHECK WINNER, PLEASE FIGURE OUT
+        # WHAT IT IS.
         for val in sublist:
             if val != player:
-                print(f'{val} does not match {player}.')
+                #print(f'{val} does not match {player}.')
                 winner = False
-                break
-        if winner == True:
-            print(f'{player} has won the game!')
-            return True
+                continue
         
-    #print(f'{player} has not won the game...')
+    print(f'{player} has not won the game...')
     return False
 
 # =======
