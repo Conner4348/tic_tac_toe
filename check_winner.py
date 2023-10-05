@@ -24,41 +24,32 @@
 # will return True.
 # If the nested loops are all terminated, then the function should return False.
 
-from convert_board import convert_board_fn as convert
+
 
 def check_winner_fn(game_state, player): # player is the letter that the player is using (X or O)
 
     winner = None
     for sublist in game_state:
-        #if winner == True:
-        #    print(f'{player} has won the game!')
-        #    return True
         winner = True
-
-        # SOMETHING IS WRONG WITH THIS CODE, I THINK.
-        # YES SOMETHING IS WRONG WITH CHECK WINNER, PLEASE FIGURE OUT
-        # WHAT IT IS.
         for val in sublist:
             if val != player:
-                #print(f'{val} does not match {player}.')
                 winner = False
                 break
         if winner == True:
             print(f'{player} has won the game!')
+            print('')
             return True
-        
-    print(f'{player} has not won the game...')
     return False
 
 # =======
 # TESTING
 # =======
 
-test_one = [['X', 'X', 'X'], [3, 'O', 'O'], [6, 'X', 'O']]
-test_two = [['X', 'X', 2], ['X', 'O', 'O'], [6, 'X', 'O']]
-test_three = [['O', 'O', 2], ['X', 'X', 'X'], [6, 'X', 'O']]
+#test_one = [['X', 'X', 'X'], [3, 'O', 'O'], [6, 'X', 'O']]
+#test_two = [['X', 'X', 2], ['X', 'O', 'O'], [6, 'X', 'O']]
+#test_three = [['O', 'O', 2], ['X', 'X', 'X'], [6, 'X', 'O']]
 #test_four = {0: None, 1: None, 2: None, 3: None, 4: None, 5: None, 6: 'X', 7: 'X', 8: 'X'}
-test_five = {0: None, 1: None, 2: 'X', 3: None, 4: 'X', 5: None, 6: 'X', 7: None, 8: None}
+#test_five = {0: None, 1: None, 2: 'X', 3: None, 4: 'X', 5: None, 6: 'X', 7: None, 8: None}
 
 #print('The following two tests should return True, False, True:')
 #fn_one = check_winner(test_one, 'X')

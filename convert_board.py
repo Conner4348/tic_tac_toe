@@ -19,12 +19,9 @@ def convert_board_fn(game_state, config):
       if len(current_sub) == 3:
         board_config.append(current_sub)
         current_sub = []
-    print(board_config)
     return board_config
 
-  # PLEASE WRITE COMMENTS TO EXPLAIN CODE
   if config == 1:
-
     current_sub = []
     current_index = 0
     current_loop = 1
@@ -36,7 +33,6 @@ def convert_board_fn(game_state, config):
         current_sub = []
         current_index -= 8
         current_loop += 1
-    print(board_config)
     return board_config
 
 
@@ -53,7 +49,6 @@ def convert_board_fn(game_state, config):
         current_sub = []
         current_dif = -2
       current_index = current_index + current_dif
-    print(board_config)
     return board_config
   
 
@@ -65,7 +60,7 @@ def convert_board_fn(game_state, config):
 # TESTING
 # =======
 
-test_one = {0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8}
+#test_one = {0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8}
 
 #fn_test_one = convert_board_fn(test_one, 0)
 #fn_test_two = convert_board_fn(test_one, 1)
