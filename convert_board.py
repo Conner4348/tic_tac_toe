@@ -67,6 +67,6 @@ def convert_board_fn(game_state, config):
 
 test_one = {0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8}
 
-#fn_test_one = convert_board(test_one, 0)
-#fn_test_two = convert_board(test_one, 1)
-#fn_test_three = convert_board(test_one, 2)
+#fn_test_one = convert_board_fn(test_one, 0)
+#fn_test_two = convert_board_fn(test_one, 1)
+#fn_test_three = convert_board_fn(test_one, 2)
