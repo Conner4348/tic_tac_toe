@@ -11,8 +11,7 @@ from get_input import bot_input_fn as bot
 game_state = {0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8}
 
 
-def tic_tac_toe(game_state=game_state):
-    print("""
+print("""
 
  __      __       .__                                  __                         
 /  \    /  \ ____ |  |   ____  ____   _____   ____   _/  |_  ____                 
@@ -28,39 +27,38 @@ ___________.__                   __                            __
                    \/                     \/     \/                            \/ 
 
       """)
+print('')
+
+
+
+
+
+
+current_round = 0
+while current_round < 9:
+    print('Please select an option from the following choices:')
     print('')
-
-
-
-
-
-
-    current_round = 0
-    while current_round < 9:
-        print('Please select an option from the following choices:')
-        print('')
-        print_board = convert(game_state, 0)
-        for row in print_board:
-            print(row)
-        get(game_state)
-        row = cw(convert(game_state, 0), 'X')
-        down = cw(convert(game_state, 1), 'X')
-        diag = cw(convert(game_state, 2), 'X')
-        if row == True or down == True or diag == True:
-            break
-        current_round += 1
-        bot(game_state)
-        row = cw(convert(game_state, 0), 'O')
-        down = cw(convert(game_state, 1), 'O')
-        diag = cw(convert(game_state, 2), 'O')
-        if row == True or down == True or diag == True:
-            break
-        current_round += 1
-
     print_board = convert(game_state, 0)
     for row in print_board:
         print(row)
-    print('')
+    get(game_state)
+    row = cw(convert(game_state, 0), 'X')
+    down = cw(convert(game_state, 1), 'X')
+    diag = cw(convert(game_state, 2), 'X')
+    if row == True or down == True or diag == True:
+        current_round = 9
+        break
+    current_round += 1
+    bot(game_state)
+    row = cw(convert(game_state, 0), 'O')
+    down = cw(convert(game_state, 1), 'O')
+    diag = cw(convert(game_state, 2), 'O')
+    if row == True or down == True or diag == True:
+        current_round = 9
+        break
+    current_round += 1
 
-
-game_test = tic_tac_toe()
+print_board = convert(game_state, 0)
+for row in print_board:
+    print(row)
+print('')
