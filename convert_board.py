@@ -5,19 +5,17 @@
 # FOR EITHER EACH ROW, COLUMN OR DIAGONAL.
 # ===================================================
 
-# Create a function that takes the game state and
-# how you want the board to be configured (0=across, 1=vertical, 2=diagonal).
 
-def convert_board_fn(game_state, config):
+def convert_board_fn(game_state, config): # Function takes the current game_state (dictionary) and config for how you want to arrange the board (0=rows, 1=columns, 2=diagonals)
 
-  board_config = []
+  board_config = [] # board_config will hold the arrangement of the board.
 
   if config == 0:
-    current_sub = []
+    current_sub = [] # current_sub will hold each sublist of either a row, column or diagonal.
     for val in game_state.values():
-      current_sub.append(val)
+      current_sub.append(val) # each value of the board gets appended, until current_sub has 3 values.
       if len(current_sub) == 3:
-        board_config.append(current_sub)
+        board_config.append(current_sub) # current_sub is then appended to the board_config and current_sub is redefined as empty for the next values.
         current_sub = []
     return board_config
 
