@@ -42,7 +42,10 @@ def check_winner_fn(game_state, player): # player is the letter that the player 
             if val != player:
                 #print(f'{val} does not match {player}.')
                 winner = False
-                continue
+                break
+        if winner == True:
+            print(f'{player} has won the game!')
+            return True
         
     print(f'{player} has not won the game...')
     return False
